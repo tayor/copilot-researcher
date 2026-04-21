@@ -1,0 +1,60 @@
+{
+  "name": "copilot-researcher",
+  "version": "0.1.0",
+  "description": "Copilot-native researcher harness and local-first TypeScript SDK for research sessions, hypotheses, evidence, artifacts, and Markdown reports.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "copilot-researcher": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    ".github",
+    "AGENTS.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "prepack": "npm run build",
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "keywords": [
+    "research",
+    "researcher",
+    "hypothesis-tracking",
+    "experiment-tracking",
+    "cli",
+    "typescript",
+    "copilot",
+    "github-copilot",
+    "agents",
+    "skills"
+  ],
+  "author": "tayor",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "commander": "^14.0.3",
+    "yaml": "^2.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
